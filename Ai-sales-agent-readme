@@ -1,0 +1,124 @@
+# AI Sales Agent for WhatsApp
+
+This is an automated AI Sales Agent that:
+
+* Scrapes business leads (name, phone, website, address)
+* Formats phone numbers with auto-detected country codes
+* Sends personalized WhatsApp messages
+* Handles replies using OpenAI to mimic a human sales rep
+
+---
+
+## 🧠 Use Case
+
+You want to target businesses (e.g. plumbers, restaurants, agencies) and offer services like:
+
+* Website Development
+* Social Media Marketing
+* SEO Optimization
+
+This bot does it for you — from lead scraping to WhatsApp message to AI-based chat.
+
+---
+
+## 📁 Project Structure
+
+```
+ai-sales-agent/
+├── index.js              # Main entry point
+├── ai.js                 # Handles AI replies using OpenAI
+├── leads.json            # Contains the business leads
+├── scraper.js            # Optional: generate leads (can use static for now)
+├── utils.js              # Utilities: phone parsing, delay, logging
+├── .env                  # Store your API keys and credentials
+```
+
+---
+
+## 🚀 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/ai-sales-agent.git
+cd ai-sales-agent
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup environment variables
+
+Create a `.env` file:
+
+```env
+OPENAI_API_KEY=your-openai-key
+WHATSAPP_API_URL=https://your-whatsapp-api/send
+DEFAULT_COUNTRY=US
+```
+
+> 💡 `WHATSAPP_API_URL` must point to a working API that can send WhatsApp messages (e.g., [Chat-API](https://chat-api.com/) or [WATI](https://www.wati.io/))
+
+---
+
+## 📤 Usage
+
+### To Run with Static Leads:
+
+```bash
+node index.js
+```
+
+### To Generate Dummy Leads First:
+
+```bash
+node scraper.js
+```
+
+Then:
+
+```bash
+node index.js
+```
+
+---
+
+## 📱 Message Format
+
+* Sends first message:
+
+  > Hello \[Business Name]! I’m a professional web/marketing expert. Do you need help with your online presence (Website / Social Media / SEO)?
+
+* Handles replies with real-time AI answers (powered by GPT).
+
+---
+
+## 📦 Features
+
+* ✅ Country code formatting using `libphonenumber-js`
+* ✅ Dynamic lead injection
+* ✅ Human-like conversation powered by OpenAI
+* ✅ Throttle support to avoid WhatsApp ban
+
+---
+
+## ⚠️ Disclaimer
+
+Use it responsibly. Spamming businesses may violate WhatsApp's terms and result in bans. Use **safe throttling**, target warm leads, and comply with legal boundaries.
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 👨‍💻 Author
+
+**Your Name**
+[YourWebsite.com](https://yourwebsite.com)
+📧 [your@email.com](mailto:your@email.com)
